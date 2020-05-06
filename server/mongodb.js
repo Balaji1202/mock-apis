@@ -2,7 +2,11 @@ require('dotenv/config');
 const mongodb = require('mongodb');
 module.exports = loadDataFromMongo = async function(collectionName) {
   try {
-    const client = await mongodb.MongoClient.connect(process.env.db_key, {
+    let dbName = process.env.db_name;
+    let dbPswd = process.env.db_pswd;
+    let clusterName = process.env.cluster_name;
+    let uri = `mongodb+srv://${dbName}:${dbPswd}@${clusterName}.mongodb.net/test?retryWrites=true&w=majority`
+    const client = await mongodb.MongoClient.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
