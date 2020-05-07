@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* #2193b0 → #6dd5ed */
+    --light-theme-body: white;
+    --light-theme-text: black;
+    /*  */
+    --dark-theme-body: black;
+    --dark-theme-text: white;
+    /*  */
+    --theme-base-body: var(--dark-theme-body);
+    --theme-base-text: var(--dark-theme-text);
+    font-size: 1em;
+}
