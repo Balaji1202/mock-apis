@@ -45,7 +45,7 @@ export default {
 		justify-content: space-around;
 		align-items: center;
 		width: 100%;
-		height: 75px;
+		height: 5rem;
 		font-size: 2.5rem;
 		z-index: 100;
 		border-bottom: 1px solid black;
@@ -58,7 +58,7 @@ export default {
 	.documentation a {
 		text-decoration: underline;
 		color: black;
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 	}
 	img {
 		cursor: pointer;

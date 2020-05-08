@@ -16,3 +16,33 @@
     --theme-base-text: var(--dark-theme-text);
     font-size: 1em;
 }
+
+@media (min-width: 0px) {
+     :root {
+        font-size: .5em;
+    }
+}
+
+@media (min-width: 400px) {
+     :root {
+        font-size: .6em;
+    }
+}
+
+@media (min-width: 600px) {
+     :root {
+        font-size: .7em;
+    }
+}
+
+@media (min-width: 800px) {
+     :root {
+        font-size: .8em;
+    }
+}
+
+@media (min-width: 1000px) {
+     :root {
+        font-size: .9em;
+    }
+}

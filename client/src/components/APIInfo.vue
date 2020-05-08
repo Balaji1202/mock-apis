@@ -1,16 +1,10 @@
 <template>
   <div class="info">
-	<ul>
+	<ul v-for="(item, index) in api" :key="index">
 		<li>
-			<a href="api/personalInfo" target="_blank">Personal Information API</a>
+			<a :href="item.href" target="_blank">{{item.display}}</a>
 		</li>
-		<li>
-			<a href="api/movies" target="_blank">Movie data API</a>
-		</li>
-		<li>
-			<a href="http://127.0.0.1:5000/api/personalinfo" target="_blank">Stock market Information API</a>
-		</li>
-		</ul>
+	</ul>
 		<div class="info-footer">
 			<p>
 				Are you ready to play with these thousands of mocked data. Hit the <a href="https://twobytwelve.blogspot.com/2020/05/mocked-api-documentation.html">documentation</a> page, and get started
@@ -21,7 +15,23 @@
 
 <script>
 export default {
-  
+  data() {
+		return {
+			api: [{
+				href: 'api/personal',
+				display: 'Personal Information API'
+			},
+			{
+				href: 'api/movies',
+				display: 'Movie data API'
+			},
+			{
+				href: 'api/stockmarket',
+				display: 'Stock market Information API'
+			}]
+			
+		}
+	},
 }
 </script>
 
@@ -33,7 +43,7 @@ export default {
 	text-align: center;
 	flex-direction: column;
 	flex-wrap: wrap;
-	margin: 200px 0 0 0;
+	margin: 15rem 0 0 0;
 }
 .info a {
 	text-decoration: underline;
@@ -46,6 +56,7 @@ export default {
 }
 .info-footer {
 	padding: 3rem;
+	padding-top: 5rem;
 	font-size: 2rem;
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 }
