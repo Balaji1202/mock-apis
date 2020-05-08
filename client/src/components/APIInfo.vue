@@ -18,7 +18,7 @@ export default {
   data() {
 		return {
 			api: [{
-				href: 'api/personal',
+				href: 'api/personalinfo',
 				display: 'Personal Information API'
 			},
 			{
