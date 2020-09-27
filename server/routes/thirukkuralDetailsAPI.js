@@ -3,7 +3,7 @@ const thirukkuralDetailsRouter = express.Router();
 const loadDataFromMongo = require('./../mongodb');
 
 thirukkuralDetailsRouter.get('/', async(req, res) => {
-  const data = await loadDataFromMongo('kural');
+  const data = await loadDataFromMongo('thirukkuralDetails');
   if (req.query) {
     res.send(await data.find(req.query).toArray());
   } else {
@@ -13,7 +13,7 @@ thirukkuralDetailsRouter.get('/', async(req, res) => {
 
 // Get the collections via normal params of id
 thirukkuralDetailsRouter.get('/:id', async(req, res) => {
-  const data = await loadDataFromMongo('kural');
+  const data = await loadDataFromMongo('thirukkuralDetails');
   let id = Number(req.params.id);
   res.send(await data.find({ _id: id }).toArray());
 });
@@ -21,22 +21,20 @@ thirukkuralDetailsRouter.get('/:id', async(req, res) => {
 
 // Create collection from JSON
 const pushCollection = async() => {
-    const kuraldetailsData = require('kuraldetails.json');
+    const thirukkuralDetailsData = require('thirukkuralDetails.json');
 
-    const kuraldetails = await loadDataFromMongo('kuraldetails');
-    kuraldetailsData.forEach((data, index) => {
+    const thirukkuralDetails = await loadDataFromMongo('thirukkuralDetails');
+    thirukkuralDetailsData.forEach((data, index) => {
       data._id = index;
-      kuraldetails.insertOne(data);
+      thirukkuralDetails.insertOne(data);
     });
 }
 // pushCollection();
 
 // Delete collection
 const deleteCollection = async() => {
-    const kuraldetails = await loadDataFromMongo('kuraldetails');
-    kuraldetails.deleteMany();
-    const kural = await loadDataFromMongo('kural');
-    kural.deleteMany();
+    const thirukkuralDetails = await loadDataFromMongo('thirukkuralDetails');
+    thirukkuralDetails.deleteMany();
   }
 // deleteCollection();
 
