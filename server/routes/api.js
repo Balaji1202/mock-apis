@@ -12,4 +12,10 @@ router.use('/stockmarket', stockMarketRouter);
 const personalInfoRouter = require('./personalInfoAPI');
 router.use('/personalinfo', personalInfoRouter);
 
+const thirukkuralRouter = require('./thirukkuralAPI');
+router.use('/thirukkural', thirukkuralRouter);
+
+const thirukkuralDetailsRouter = require('./thirukkuralDetailsAPI');
+router.use('/thirukkuralDetails', thirukkuralDetailsRouter);
+
 module.exports = router;
