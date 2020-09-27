@@ -31,7 +31,7 @@ export default {
                 },
                 {
                     href: 'api/thirukkural',
-                    display: 'The collection of poems from the classic Tamil Literature Thirukkural'
+                    display: 'The 1330 collection of poems from the classic Tamil Literature Thirukkural'
                 },
                 {
                     href: 'api/thirukkuralDetails',
